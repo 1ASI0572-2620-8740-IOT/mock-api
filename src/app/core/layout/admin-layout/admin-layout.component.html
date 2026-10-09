@@ -1,0 +1,181 @@
+<mat-sidenav-container class="admin-shell" [hasBackdrop]="isHandset()">
+  <mat-sidenav
+    #drawer
+    class="admin-sidebar"
+    [mode]="isHandset() ? 'over' : 'side'"
+    [opened]="!isHandset()"
+    [disableClose]="!isHandset()"
+    aria-label="Menú administrativo"
+  >
+    <div class="sidebar-content">
+      <a
+        class="brand-link"
+        routerLink="/users"
+        aria-label="HydroGuard Admin Portal"
+        (click)="closeNavigation(drawer)"
+      >
+        <span class="brand-icon-box">
+          <mat-icon class="brand-drop">water_drop</mat-icon>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Hydro<span class="brand-highlight">Guard</span></span>
+          <span class="brand-pill">ADMIN</span>
+        </span>
+      </a>
+
+      <p class="nav-section-label">Administración</p>
+      <nav class="side-nav" aria-label="Navegación administrativa">
+        <a
+          class="nav-item"
+          routerLink="/users"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">people</mat-icon>
+          <span>Operarios</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/groups"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">group_work</mat-icon>
+          <span>Grupos</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/reservoirs"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">water</mat-icon>
+          <span>Reservorios</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/devices"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">developer_board</mat-icon>
+          <span>Dispositivos</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/operator-profiles"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">badge</mat-icon>
+          <span>Perfiles</span>
+        </a>
+        <p class="nav-section-label nav-subsection">Monitoreo</p>
+        <a
+          class="nav-item"
+          routerLink="/monitoring"
+          routerLinkActive="active-nav"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">monitor_heart</mat-icon>
+          <span>Estado operacional</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/monitoring/alerts"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">notifications_active</mat-icon>
+          <span>Alertas</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/monitoring/incidents"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">report_problem</mat-icon>
+          <span>Incidentes</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/monitoring/traceability"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">timeline</mat-icon>
+          <span>Trazabilidad</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/telemetry"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">sensors</mat-icon>
+          <span>Telemetría</span>
+        </a>
+        <a
+          class="nav-item"
+          routerLink="/treatments"
+          routerLinkActive="active-nav"
+          ariaCurrentWhenActive="page"
+          (click)="closeNavigation(drawer)"
+        >
+          <mat-icon class="nav-icon">science</mat-icon>
+          <span>Tratamientos</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <span class="admin-avatar"><mat-icon>admin_panel_settings</mat-icon></span>
+          <span class="admin-info">
+            <span class="admin-name">{{ sessionStore.adminIdentifier() || 'Admin' }}</span>
+            <span class="admin-role">Administrador</span>
+          </span>
+        </div>
+        <button mat-stroked-button class="btn-logout" type="button" (click)="signOut()">
+          <mat-icon>logout</mat-icon>
+          Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content-shell">
+    @if (isHandset()) {
+      <header class="mobile-header">
+        <button
+          mat-icon-button
+          type="button"
+          aria-label="Abrir menú administrativo"
+          matTooltip="Abrir menú"
+          (click)="drawer.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a class="mobile-brand" routerLink="/users">
+          Hydro<span>Guard</span>
+          <small>ADMIN</small>
+        </a>
+      </header>
+    }
+
+    <main class="admin-content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

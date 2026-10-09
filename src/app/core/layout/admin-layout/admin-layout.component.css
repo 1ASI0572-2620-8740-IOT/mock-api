@@ -1,0 +1,253 @@
+.admin-shell {
+  height: 100vh;
+  background: #f8fafc;
+}
+
+.admin-sidebar {
+  width: 268px;
+  border: 0;
+  border-radius: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.sidebar-content {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px 18px;
+}
+
+.brand-link,
+.mobile-brand {
+  text-decoration: none;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+.brand-icon-box {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 11px;
+  background: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.24);
+}
+
+.brand-drop {
+  width: 23px;
+  height: 23px;
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.brand-text {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-highlight,
+.mobile-brand span {
+  color: #38bdf8;
+}
+
+.brand-pill,
+.mobile-brand small {
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 5px;
+}
+
+.nav-section-label {
+  margin: 38px 12px 10px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-section-label.nav-subsection {
+  margin-top: 24px;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  box-sizing: border-box;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #f8fafc;
+}
+
+.nav-item.active-nav {
+  border-color: rgba(56, 189, 248, 0.25);
+  background: rgba(56, 189, 248, 0.14);
+  color: #ffffff;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-profile {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 4px 14px;
+}
+
+.admin-avatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 50%;
+  background: #0284c7;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-avatar mat-icon {
+  width: 19px;
+  height: 19px;
+  font-size: 19px;
+}
+
+.admin-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.admin-name {
+  overflow: hidden;
+  color: #f1f5f9;
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-role {
+  color: #94a3b8;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn-logout {
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #cbd5e1 !important;
+}
+
+.btn-logout:hover {
+  border-color: rgba(248, 113, 113, 0.35) !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #fca5a5 !important;
+}
+
+.content-shell {
+  min-width: 0;
+  background: #f8fafc;
+}
+
+.admin-content {
+  min-width: 0;
+  min-height: 100%;
+}
+
+.mobile-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.mobile-header button {
+  color: #e2e8f0;
+}
+
+.mobile-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 900px) {
+  .admin-sidebar {
+    width: min(82vw, 280px);
+  }
+
+  .sidebar-content {
+    padding-top: 20px;
+  }
+}

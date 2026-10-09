@@ -1,0 +1,1324 @@
+{
+  "organizations": [
+    {
+      "id": "org-textile",
+      "name": "Textil San Juan S.A.C.",
+      "ruc": "20512345678",
+      "phone": "+51987654321",
+      "segment": "TEXTILE",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-01T08:00:00.000Z",
+      "updatedAt": "2026-09-01T08:00:00.000Z"
+    },
+    {
+      "id": "org-hydroponic",
+      "name": "Hidroverde Pachacámac S.A.C.",
+      "ruc": "20687654321",
+      "phone": "+51976543210",
+      "segment": "HYDROPONIC",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-02T08:00:00.000Z",
+      "updatedAt": "2026-09-02T08:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-admin-textile",
+      "organizationId": "org-textile",
+      "identifier": "admin.textil@hydroguard.pe",
+      "username": "admin.textil@hydroguard.pe",
+      "displayName": "Administrador Textil",
+      "password": "adminpassword123",
+      "role": "ROLE_ADMIN",
+      "roles": ["ROLE_ADMIN"],
+      "status": "ACTIVE",
+      "email": "admin.textil@hydroguard.pe",
+      "createdAt": "2026-09-01T08:00:00.000Z",
+      "updatedAt": "2026-09-01T08:00:00.000Z"
+    },
+    {
+      "id": "usr-admin-hydroponic",
+      "organizationId": "org-hydroponic",
+      "identifier": "admin.hidro@hydroguard.pe",
+      "username": "admin.hidro@hydroguard.pe",
+      "displayName": "Administrador Hidropónico",
+      "password": "adminpassword123",
+      "role": "ROLE_ADMIN",
+      "roles": ["ROLE_ADMIN"],
+      "status": "ACTIVE",
+      "email": "admin.hidro@hydroguard.pe",
+      "createdAt": "2026-09-02T08:00:00.000Z",
+      "updatedAt": "2026-09-02T08:00:00.000Z"
+    },
+    {
+      "id": "usr-marcelino",
+      "organizationId": "org-textile",
+      "identifier": "marcelino.valencia",
+      "username": "marcelino.valencia",
+      "displayName": "Marcelino Valencia",
+      "password": "operadorpassword123",
+      "role": "ROLE_OPERATOR",
+      "roles": ["ROLE_OPERATOR"],
+      "status": "ACTIVE",
+      "email": "mvalencia@textilperu.com",
+      "createdAt": "2026-09-05T10:00:00.000Z",
+      "updatedAt": "2026-09-05T10:00:00.000Z"
+    },
+    {
+      "id": "usr-lucia",
+      "organizationId": "org-hydroponic",
+      "identifier": "lucia.paredes",
+      "username": "lucia.paredes",
+      "displayName": "Lucía Paredes",
+      "password": "operadorpassword123",
+      "role": "ROLE_OPERATOR",
+      "roles": ["ROLE_OPERATOR"],
+      "status": "ACTIVE",
+      "email": "lparedes@hidroverde.pe",
+      "createdAt": "2026-09-10T14:30:00.000Z",
+      "updatedAt": "2026-09-10T14:30:00.000Z"
+    },
+    {
+      "id": "usr-carlos",
+      "organizationId": "org-hydroponic",
+      "identifier": "carlos.mendoza",
+      "username": "carlos.mendoza",
+      "displayName": "Carlos Mendoza",
+      "password": "operadorpassword123",
+      "role": "ROLE_OPERATOR",
+      "roles": ["ROLE_OPERATOR"],
+      "status": "ACTIVE",
+      "email": "cmendoza@agrohuerto.pe",
+      "createdAt": "2026-09-15T09:15:00.000Z",
+      "updatedAt": "2026-09-15T09:15:00.000Z"
+    },
+    {
+      "id": "usr-jorge",
+      "organizationId": "org-textile",
+      "identifier": "jorge.quispe",
+      "username": "jorge.quispe",
+      "displayName": "Jorge Quispe (Baja)",
+      "password": "operadorpassword123",
+      "role": "ROLE_OPERATOR",
+      "roles": ["ROLE_OPERATOR"],
+      "status": "INACTIVE",
+      "email": "jquispe@textilperu.com",
+      "createdAt": "2026-08-20T11:00:00.000Z",
+      "updatedAt": "2026-09-02T16:00:00.000Z"
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp-1",
+      "organizationId": "org-textile",
+      "name": "Planta Textil San Juan",
+      "purpose": "Acondicionamiento y tratamiento de efluentes de teñido textil",
+      "segment": "TEXTILE",
+      "createdAt": "2026-09-01T08:30:00.000Z"
+    },
+    {
+      "id": "grp-2",
+      "organizationId": "org-hydroponic",
+      "name": "Módulo Hidropónico Pachacámac",
+      "purpose": "Preparación de solución nutritiva para cultivo de lechuga NFT",
+      "segment": "HYDROPONIC",
+      "createdAt": "2026-09-02T09:00:00.000Z"
+    }
+  ],
+  "reservoirs": [
+    {
+      "id": "res-101",
+      "organizationId": "org-textile",
+      "groupId": "grp-1",
+      "code": "POZA-01",
+      "name": "Poza de Acondicionamiento #1",
+      "reservoirType": "SUMP",
+      "location": "Área de teñido y acabado - Nave B"
+    },
+    {
+      "id": "res-102",
+      "organizationId": "org-textile",
+      "groupId": "grp-1",
+      "code": "POZA-02",
+      "name": "Poza de Acondicionamiento #2",
+      "reservoirType": "SUMP",
+      "location": "Área de tintorería - Nave C"
+    },
+    {
+      "id": "res-201",
+      "organizationId": "org-hydroponic",
+      "groupId": "grp-2",
+      "code": "TANQUE-NFT-A",
+      "name": "Tanque Nutritivo Lechuga NFT-A",
+      "reservoirType": "TANK",
+      "location": "Invernadero principal módulo 1"
+    },
+    {
+      "id": "res-202",
+      "organizationId": "org-hydroponic",
+      "groupId": "grp-2",
+      "code": "TANQUE-NFT-B",
+      "name": "Tanque Nutritivo Berros NFT-B",
+      "reservoirType": "TANK",
+      "location": "Invernadero módulo 2"
+    },
+    {
+      "id": "res-203",
+      "organizationId": "org-textile",
+      "groupId": "grp-1",
+      "code": "POZA-03",
+      "name": "Poza de Acondicionamiento #3",
+      "reservoirType": "SUMP",
+      "location": "Área de pruebas - sin responsable"
+    }
+  ],
+  "devices": [
+    {
+      "id": "dev-101",
+      "organizationId": "org-textile",
+      "serialNumber": "ESP32-HG-TX-001",
+      "deviceModel": "HydroGuard-Pro-V1",
+      "reservoirId": "res-101",
+      "operatingEnvironment": "ACADEMIC_PROTOTYPE",
+      "lifecycleStatus": "ACTIVE_ASSIGNED",
+      "availability": "ONLINE",
+      "lastCommunicationAt": "2026-09-28T22:30:00.000Z"
+    },
+    {
+      "id": "dev-102",
+      "organizationId": "org-textile",
+      "serialNumber": "ESP32-HG-TX-002",
+      "deviceModel": "HydroGuard-Pro-V1",
+      "reservoirId": "res-102",
+      "operatingEnvironment": "SIMULATION",
+      "lifecycleStatus": "ACTIVE_ASSIGNED",
+      "availability": "ONLINE",
+      "lastCommunicationAt": "2026-09-28T22:35:00.000Z"
+    },
+    {
+      "id": "dev-201",
+      "organizationId": "org-hydroponic",
+      "serialNumber": "ESP32-HG-HP-001",
+      "deviceModel": "HydroGuard-Pro-V1",
+      "reservoirId": "res-201",
+      "operatingEnvironment": "ACADEMIC_PROTOTYPE",
+      "lifecycleStatus": "ACTIVE_ASSIGNED",
+      "availability": "DELAYED",
+      "lastCommunicationAt": "2026-09-28T22:15:00.000Z"
+    },
+    {
+      "id": "dev-202",
+      "organizationId": "org-hydroponic",
+      "serialNumber": "ESP32-HG-HP-002",
+      "deviceModel": "HydroGuard-Pro-V1",
+      "reservoirId": "res-202",
+      "operatingEnvironment": "SIMULATION",
+      "lifecycleStatus": "ACTIVE_ASSIGNED",
+      "availability": "OFFLINE",
+      "lastCommunicationAt": "2026-09-27T10:00:00.000Z"
+    },
+    {
+      "id": "dev-203",
+      "organizationId": "org-textile",
+      "serialNumber": "ESP32-HG-TX-003",
+      "deviceModel": "HydroGuard-Pro-V1",
+      "reservoirId": "res-203",
+      "operatingEnvironment": "ACADEMIC_PROTOTYPE",
+      "lifecycleStatus": "ACTIVE_UNASSIGNED",
+      "availability": "OFFLINE",
+      "lastCommunicationAt": "2026-09-20T10:00:00.000Z"
+    }
+  ],
+  "deviceIdentities": [
+    {
+      "deviceId": "dev-101",
+      "organizationId": "org-textile",
+      "credentialHash": "mock-hash-dev-101",
+      "status": "ACTIVE",
+      "activatedAt": "2026-09-01T08:05:00.000Z",
+      "revokedAt": null,
+      "createdAt": "2026-09-01T08:05:00.000Z",
+      "updatedAt": "2026-09-01T08:05:00.000Z"
+    },
+    {
+      "deviceId": "dev-102",
+      "organizationId": "org-textile",
+      "credentialHash": "mock-hash-dev-102",
+      "status": "ACTIVE",
+      "activatedAt": "2026-09-01T08:06:00.000Z",
+      "revokedAt": null,
+      "createdAt": "2026-09-01T08:06:00.000Z",
+      "updatedAt": "2026-09-01T08:06:00.000Z"
+    },
+    {
+      "deviceId": "dev-201",
+      "organizationId": "org-hydroponic",
+      "credentialHash": "mock-hash-dev-201",
+      "status": "ACTIVE",
+      "activatedAt": "2026-09-02T09:05:00.000Z",
+      "revokedAt": null,
+      "createdAt": "2026-09-02T09:05:00.000Z",
+      "updatedAt": "2026-09-02T09:05:00.000Z"
+    },
+    {
+      "deviceId": "dev-202",
+      "organizationId": "org-hydroponic",
+      "credentialHash": "mock-hash-dev-202",
+      "status": "REVOKED",
+      "activatedAt": "2026-09-02T09:06:00.000Z",
+      "revokedAt": "2026-09-27T10:30:00.000Z",
+      "createdAt": "2026-09-02T09:06:00.000Z",
+      "updatedAt": "2026-09-27T10:30:00.000Z"
+    },
+    {
+      "deviceId": "dev-203",
+      "organizationId": "org-textile",
+      "credentialHash": "mock-hash-dev-203",
+      "status": "ACTIVE",
+      "activatedAt": "2026-09-03T10:00:00.000Z",
+      "revokedAt": null,
+      "createdAt": "2026-09-03T10:00:00.000Z",
+      "updatedAt": "2026-09-03T10:00:00.000Z"
+    }
+  ],
+  "operatorProfiles": [
+    {
+      "id": "prof-1",
+      "organizationId": "org-textile",
+      "userId": "usr-marcelino",
+      "groupId": "grp-1",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-05T10:30:00.000Z"
+    },
+    {
+      "id": "prof-2",
+      "organizationId": "org-hydroponic",
+      "userId": "usr-lucia",
+      "groupId": "grp-2",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-10T15:00:00.000Z"
+    },
+    {
+      "id": "prof-3",
+      "organizationId": "org-hydroponic",
+      "userId": "usr-carlos",
+      "groupId": "grp-2",
+      "status": "PENDING_FIRST_ACCESS",
+      "createdAt": "2026-09-15T09:30:00.000Z"
+    },
+    {
+      "id": "prof-4",
+      "organizationId": "org-textile",
+      "userId": "usr-jorge",
+      "groupId": "grp-1",
+      "status": "INACTIVE",
+      "createdAt": "2026-08-20T11:30:00.000Z"
+    }
+  ],
+  "deviceAssignments": [
+    {
+      "id": "asgn-1",
+      "organizationId": "org-textile",
+      "operatorProfileId": "prof-1",
+      "reservoirId": "res-101",
+      "reservoirName": "Poza de Acondicionamiento #1",
+      "deviceId": "dev-101",
+      "deviceSerialNumber": "ESP32-HG-TX-001",
+      "status": "ACTIVE",
+      "assignedAt": "2026-09-05T10:35:00.000Z"
+    },
+    {
+      "id": "asgn-2",
+      "organizationId": "org-textile",
+      "operatorProfileId": "prof-1",
+      "reservoirId": "res-102",
+      "reservoirName": "Poza de Acondicionamiento #2",
+      "deviceId": "dev-102",
+      "deviceSerialNumber": "ESP32-HG-TX-002",
+      "status": "ACTIVE",
+      "assignedAt": "2026-09-06T08:00:00.000Z"
+    },
+    {
+      "id": "asgn-3",
+      "organizationId": "org-hydroponic",
+      "operatorProfileId": "prof-2",
+      "reservoirId": "res-201",
+      "reservoirName": "Tanque Nutritivo Lechuga NFT-A",
+      "deviceId": "dev-201",
+      "deviceSerialNumber": "ESP32-HG-HP-001",
+      "status": "ACTIVE",
+      "assignedAt": "2026-09-10T15:10:00.000Z"
+    },
+    {
+      "id": "asgn-4",
+      "organizationId": "org-hydroponic",
+      "operatorProfileId": "prof-3",
+      "reservoirId": "res-202",
+      "reservoirName": "Tanque Nutritivo Berros NFT-B",
+      "deviceId": "dev-202",
+      "deviceSerialNumber": "ESP32-HG-HP-002",
+      "status": "ACTIVE",
+      "assignedAt": "2026-09-15T09:40:00.000Z"
+    },
+    {
+      "id": "asgn-5",
+      "organizationId": "org-textile",
+      "operatorProfileId": "prof-4",
+      "reservoirId": "res-203",
+      "reservoirName": "Poza de Acondicionamiento #3",
+      "deviceId": "dev-203",
+      "deviceSerialNumber": "ESP32-HG-TX-003",
+      "status": "CLOSED",
+      "assignedAt": "2026-08-20T11:35:00.000Z"
+    }
+  ],
+  "firstAccessCodes": [
+    {
+      "id": "code-1",
+      "organizationId": "org-textile",
+      "code": "HG-9482X1",
+      "status": "USED",
+      "operatorProfileId": "prof-1",
+      "operatorAccountId": "usr-marcelino",
+      "userId": "usr-marcelino",
+      "generatedAt": "2026-09-05T10:40:00.000Z",
+      "usedAt": "2026-09-05T11:00:00.000Z"
+    },
+    {
+      "id": "code-2",
+      "organizationId": "org-hydroponic",
+      "code": "HG-74B9K2",
+      "status": "USED",
+      "operatorProfileId": "prof-2",
+      "operatorAccountId": "usr-lucia",
+      "userId": "usr-lucia",
+      "generatedAt": "2026-09-10T15:15:00.000Z",
+      "usedAt": "2026-09-10T15:45:00.000Z"
+    },
+    {
+      "id": "code-3",
+      "organizationId": "org-hydroponic",
+      "code": "HG-31Z8P9",
+      "status": "ACTIVE",
+      "operatorProfileId": "prof-3",
+      "operatorAccountId": "usr-carlos",
+      "userId": "usr-carlos",
+      "generatedAt": "2026-09-15T09:45:00.000Z"
+    },
+    {
+      "id": "code-4",
+      "organizationId": "org-textile",
+      "code": "HG-19Q7R4",
+      "status": "REVOKED",
+      "operatorProfileId": "prof-4",
+      "operatorAccountId": "usr-jorge",
+      "userId": "usr-jorge",
+      "generatedAt": "2026-08-20T11:40:00.000Z",
+      "revokedAt": "2026-09-02T16:00:00.000Z"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "cfg-textile-v1",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "configurationVersion": 1,
+      "status": "PUBLISHED",
+      "compatible": true,
+      "incompatibilityReasons": [],
+      "phMin": 6.5,
+      "phMax": 8.5,
+      "temperatureMin": 18,
+      "temperatureMax": 30,
+      "releaseMode": "MANUAL",
+      "createdAt": "2026-09-05T11:10:00.000Z",
+      "publishedAt": "2026-09-05T11:20:00.000Z"
+    },
+    {
+      "id": "cfg-textile-draft-v2",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "configurationVersion": 2,
+      "status": "DRAFT",
+      "compatible": true,
+      "incompatibilityReasons": [],
+      "phMin": 6.8,
+      "phMax": 8.2,
+      "temperatureMin": 20,
+      "temperatureMax": 28,
+      "releaseMode": "MANUAL",
+      "createdAt": "2026-09-28T10:00:00.000Z"
+    },
+    {
+      "id": "cfg-hydroponic-v1",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "configurationVersion": 1,
+      "status": "PUBLISHED",
+      "compatible": false,
+      "incompatibilityReasons": [
+        "Escenario mock: la versión requiere calentamiento y el dispositivo no declara esa capacidad."
+      ],
+      "phMin": 5.5,
+      "phMax": 6.5,
+      "temperatureMin": 18,
+      "temperatureMax": 25,
+      "releaseMode": "AUTOMATIC",
+      "createdAt": "2026-09-10T16:00:00.000Z",
+      "publishedAt": "2026-09-10T16:15:00.000Z"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "msr-tx-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.2,
+      "temperature": 24.6,
+      "measuredAt": "2026-10-03T11:44:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "msr-tx-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "ph": 9.1,
+      "temperature": 31.8,
+      "measuredAt": "2026-10-03T11:40:00.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "msr-tx-03",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 8.9,
+      "temperature": 28.1,
+      "measuredAt": "2026-10-02T15:10:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "msr-hp-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "ph": 6.1,
+      "temperature": 23.4,
+      "measuredAt": "2026-10-03T11:25:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "msr-hp-02",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "ph": 5.2,
+      "temperature": 27.9,
+      "measuredAt": "2026-10-01T09:20:00.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "wm-101-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.35,
+      "temperature": 23.8,
+      "measuredAt": "2026-10-04T18:28:45.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-101-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.32,
+      "temperature": 23.6,
+      "measuredAt": "2026-10-04T18:25:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-101-03",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.28,
+      "temperature": 23.4,
+      "measuredAt": "2026-10-04T18:20:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-101-04",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.41,
+      "temperature": 23.5,
+      "measuredAt": "2026-10-04T18:15:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-101-05",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "ph": 7.38,
+      "temperature": 23.2,
+      "measuredAt": "2026-10-04T18:10:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-102-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "ph": 7.15,
+      "temperature": 22.9,
+      "measuredAt": "2026-10-04T18:27:10.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "wm-102-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "ph": 7.18,
+      "temperature": 22.7,
+      "measuredAt": "2026-10-04T18:22:00.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "wm-102-03",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "ph": 7.12,
+      "temperature": 22.8,
+      "measuredAt": "2026-10-04T18:17:00.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "wm-201-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "ph": 6.12,
+      "temperature": 21.4,
+      "measuredAt": "2026-10-04T18:14:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-201-02",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "ph": 6.08,
+      "temperature": 21.2,
+      "measuredAt": "2026-10-04T18:09:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-201-03",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "ph": 6.15,
+      "temperature": 21.5,
+      "measuredAt": "2026-10-04T18:04:00.000Z",
+      "source": "DEVICE"
+    },
+    {
+      "id": "wm-202-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "ph": 5.85,
+      "temperature": 25.1,
+      "measuredAt": "2026-10-01T10:04:30.000Z",
+      "source": "SIMULATOR"
+    },
+    {
+      "id": "wm-203-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-203",
+      "ph": 7.02,
+      "temperature": 21.8,
+      "measuredAt": "2026-09-20T09:58:00.000Z",
+      "source": "DEVICE"
+    }
+  ],
+  "processes": [
+    {
+      "id": "proc-tx-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "state": "READY",
+      "createdAt": "2026-10-02T15:10:00.000Z",
+      "updatedAt": "2026-10-03T11:44:00.000Z"
+    },
+    {
+      "id": "proc-tx-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "state": "CORRECTION",
+      "createdAt": "2026-10-03T11:40:00.000Z",
+      "updatedAt": "2026-10-03T11:42:00.000Z"
+    },
+    {
+      "id": "proc-hp-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "state": "WAITING",
+      "createdAt": "2026-10-03T10:40:00.000Z",
+      "updatedAt": "2026-10-03T11:25:00.000Z"
+    },
+    {
+      "id": "proc-hp-02",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "state": "FAILURE",
+      "createdAt": "2026-10-01T09:20:00.000Z",
+      "updatedAt": "2026-10-01T10:05:00.000Z"
+    }
+  ],
+  "actuations": [],
+  "alerts": [
+    {
+      "id": "alt-tx-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "severity": "HIGH",
+      "description": "pH 9.1 fuera del rango configurado (6.5–8.5).",
+      "source": "Evaluación de calidad",
+      "status": "ACTIVE",
+      "createdAt": "2026-10-03T11:40:10.000Z",
+      "updatedAt": "2026-10-03T11:40:10.000Z"
+    },
+    {
+      "id": "alt-tx-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "severity": "MEDIUM",
+      "description": "La temperatura superó temporalmente el umbral operativo.",
+      "source": "Evaluación de calidad",
+      "status": "ACKNOWLEDGED",
+      "createdAt": "2026-10-02T15:10:10.000Z",
+      "updatedAt": "2026-10-02T15:18:00.000Z",
+      "attendedAt": "2026-10-02T15:18:00.000Z"
+    },
+    {
+      "id": "alt-hp-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "severity": "MEDIUM",
+      "description": "Comunicación retrasada; verifique la conectividad del dispositivo.",
+      "source": "Disponibilidad IoT",
+      "status": "ACTIVE",
+      "createdAt": "2026-10-03T11:30:00.000Z",
+      "updatedAt": "2026-10-03T11:30:00.000Z"
+    },
+    {
+      "id": "alt-hp-02",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "severity": "CRITICAL",
+      "description": "Monitoreo perdido y proceso bloqueado con la válvula cerrada.",
+      "source": "Disponibilidad IoT",
+      "status": "ACTIVE",
+      "createdAt": "2026-10-01T10:05:00.000Z",
+      "updatedAt": "2026-10-01T10:05:00.000Z"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "inc-tx-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "incidentType": "QUALITY_INCIDENT",
+      "description": "Desviación de pH corregida mediante intervención manual y reevaluación.",
+      "status": "CLOSED",
+      "correlationId": "corr-tx-01",
+      "createdAt": "2026-10-02T15:10:10.000Z",
+      "updatedAt": "2026-10-02T15:42:00.000Z",
+      "closedAt": "2026-10-02T15:42:00.000Z"
+    },
+    {
+      "id": "inc-hp-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "incidentType": "MONITORING_LOSS",
+      "description": "El dispositivo dejó de transmitir mediciones durante el intervalo esperado.",
+      "status": "OPEN",
+      "correlationId": "corr-hp-02",
+      "createdAt": "2026-10-01T10:05:00.000Z",
+      "updatedAt": "2026-10-01T10:05:00.000Z"
+    }
+  ],
+  "traceabilityEntries": [
+    {
+      "id": "evt-tx-01",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "correlationId": "corr-tx-01",
+      "cycleId": null,
+      "eventType": "MEASUREMENT_RECORDED",
+      "title": "Medición no conforme registrada",
+      "description": "Se registró pH 8.9 y temperatura 28.1 °C.",
+      "actor": "HydroGuard Edge",
+      "outcome": "WARNING",
+      "ph": 8.9,
+      "temperature": 28.1,
+      "occurredAt": "2026-10-02T15:10:00.000Z",
+      "createdAt": "2026-10-02T15:10:00.000Z"
+    },
+    {
+      "id": "evt-tx-02",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "correlationId": "corr-tx-01",
+      "cycleId": "cycle-tx-01",
+      "eventType": "CORRECTION_STARTED",
+      "title": "Corrección manual iniciada",
+      "description": "El operario confirmó la aplicación del corrector de pH.",
+      "actor": "Marcelino Valencia",
+      "outcome": "INFO",
+      "ph": 8.9,
+      "temperature": 28.1,
+      "occurredAt": "2026-10-02T15:16:00.000Z",
+      "createdAt": "2026-10-02T15:16:00.000Z"
+    },
+    {
+      "id": "evt-tx-03",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "correlationId": "corr-tx-01",
+      "cycleId": "cycle-tx-01",
+      "eventType": "MEASUREMENT_RECORDED",
+      "title": "Reevaluación conforme",
+      "description": "La nueva medición confirmó el retorno a los rangos permitidos.",
+      "actor": "HydroGuard Edge",
+      "outcome": "SUCCESS",
+      "ph": 7.2,
+      "temperature": 24.6,
+      "occurredAt": "2026-10-02T15:40:00.000Z",
+      "createdAt": "2026-10-02T15:40:00.000Z"
+    },
+    {
+      "id": "evt-tx-04",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "correlationId": "corr-tx-01",
+      "cycleId": "cycle-tx-01",
+      "eventType": "RELEASE_AUTHORIZED",
+      "title": "Liberación autorizada",
+      "description": "El administrador confirmó la liberación manual después de la reevaluación conforme.",
+      "actor": "Administrador Textil",
+      "outcome": "SUCCESS",
+      "ph": 7.2,
+      "temperature": 24.6,
+      "occurredAt": "2026-10-02T15:42:00.000Z",
+      "createdAt": "2026-10-02T15:42:00.000Z"
+    },
+    {
+      "id": "evt-tx-05",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "correlationId": "corr-tx-02",
+      "cycleId": null,
+      "eventType": "MEASUREMENT_RECORDED",
+      "title": "Parámetros fuera de rango",
+      "description": "Se detectó pH elevado y temperatura superior al máximo configurado.",
+      "actor": "HydroGuard Edge",
+      "outcome": "WARNING",
+      "ph": 9.1,
+      "temperature": 31.8,
+      "occurredAt": "2026-10-03T11:40:00.000Z",
+      "createdAt": "2026-10-03T11:40:00.000Z"
+    },
+    {
+      "id": "evt-tx-06",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "correlationId": "corr-tx-02",
+      "cycleId": null,
+      "eventType": "ALERT_CREATED",
+      "title": "Alerta de calidad generada",
+      "description": "Se notificó al operario responsable para iniciar una corrección.",
+      "actor": "Monitoring Service",
+      "outcome": "WARNING",
+      "ph": 9.1,
+      "temperature": 31.8,
+      "occurredAt": "2026-10-03T11:40:10.000Z",
+      "createdAt": "2026-10-03T11:40:10.000Z"
+    },
+    {
+      "id": "evt-hp-01",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "correlationId": "corr-hp-01",
+      "cycleId": "cycle-hp-01",
+      "eventType": "MEASUREMENT_RECORDED",
+      "title": "Medición recibida con retraso",
+      "description": "La medición se recibió fuera del intervalo esperado, pero conserva valores conformes.",
+      "actor": "HydroGuard Edge",
+      "outcome": "WARNING",
+      "ph": 6.1,
+      "temperature": 23.4,
+      "occurredAt": "2026-10-03T11:25:00.000Z",
+      "createdAt": "2026-10-03T11:25:00.000Z"
+    },
+    {
+      "id": "evt-hp-02",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "correlationId": "corr-hp-01",
+      "cycleId": "cycle-hp-01",
+      "eventType": "ALERT_CREATED",
+      "title": "Comunicación retrasada",
+      "description": "Se generó una alerta preventiva de disponibilidad.",
+      "actor": "Monitoring Service",
+      "outcome": "WARNING",
+      "ph": 6.1,
+      "temperature": 23.4,
+      "occurredAt": "2026-10-03T11:30:00.000Z",
+      "createdAt": "2026-10-03T11:30:00.000Z"
+    },
+    {
+      "id": "evt-hp-03",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "correlationId": "corr-hp-02",
+      "cycleId": null,
+      "eventType": "MONITORING_LOST",
+      "title": "Monitoreo perdido",
+      "description": "No se recibieron nuevas mediciones dentro del intervalo configurado.",
+      "actor": "Telemetry Service",
+      "outcome": "FAILURE",
+      "ph": 5.2,
+      "temperature": 27.9,
+      "occurredAt": "2026-10-01T10:05:00.000Z",
+      "createdAt": "2026-10-01T10:05:00.000Z"
+    },
+    {
+      "id": "evt-hp-04",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "correlationId": "corr-hp-02",
+      "cycleId": null,
+      "eventType": "INCIDENT_REGISTERED",
+      "title": "Incidente de disponibilidad registrado",
+      "description": "El proceso fue bloqueado y la válvula se mantuvo cerrada.",
+      "actor": "Monitoring Service",
+      "outcome": "FAILURE",
+      "ph": null,
+      "temperature": null,
+      "occurredAt": "2026-10-01T10:05:10.000Z",
+      "createdAt": "2026-10-01T10:05:10.000Z"
+    }
+  ],
+  "treatmentProcesses": [
+    {
+      "id": "trt-tx-ready",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "deviceSerialNumber": "ESP32-HG-TX-001",
+      "reservoirName": "Poza de Acondicionamiento #1",
+      "operatorName": "Marcelino Valencia",
+      "configurationVersion": 1,
+      "state": "READY",
+      "strategy": "Corrección manual de pH",
+      "approvalStatus": "APPROVED",
+      "currentCycle": 1,
+      "maximumCycles": 3,
+      "releaseMode": "MANUAL",
+      "releaseEligibility": "PENDING_CONFIRMATION",
+      "phMin": 6.5,
+      "phMax": 8.5,
+      "temperatureMin": 18,
+      "temperatureMax": 30,
+      "waitingMinutes": 15,
+      "initialMeasurement": {
+        "ph": 8.9,
+        "temperature": 28.1,
+        "measuredAt": "2026-10-02T15:10:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 7.2,
+        "temperature": 24.6,
+        "measuredAt": "2026-10-02T15:40:00.000Z",
+        "conforming": true
+      },
+      "cycles": [
+        {
+          "number": 1,
+          "action": "Aplicar corrector de pH durante 30 segundos",
+          "status": "CONFIRMED",
+          "startedAt": "2026-10-02T15:16:00.000Z",
+          "confirmedAt": "2026-10-02T15:17:00.000Z",
+          "result": "Actuación representada y reevaluación conforme."
+        }
+      ],
+      "events": [
+        {
+          "id": "tev-tx-ready-1",
+          "title": "Agua no conforme",
+          "description": "El pH superó el rango configurado.",
+          "outcome": "WARNING",
+          "occurredAt": "2026-10-02T15:10:00.000Z"
+        },
+        {
+          "id": "tev-tx-ready-2",
+          "title": "Estrategia aprobada",
+          "description": "El Operario aprobó la corrección una sola vez.",
+          "outcome": "INFO",
+          "occurredAt": "2026-10-02T15:15:00.000Z"
+        },
+        {
+          "id": "tev-tx-ready-3",
+          "title": "Agua conforme",
+          "description": "La reevaluación quedó dentro de los rangos.",
+          "outcome": "SUCCESS",
+          "occurredAt": "2026-10-02T15:40:00.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": null,
+      "startedAt": "2026-10-02T15:10:00.000Z",
+      "updatedAt": "2026-10-02T15:40:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "trt-tx-correcting",
+      "organizationId": "org-textile",
+      "deviceId": "dev-102",
+      "deviceSerialNumber": "ESP32-HG-TX-002",
+      "reservoirName": "Poza de Acondicionamiento #2",
+      "operatorName": "Marcelino Valencia",
+      "configurationVersion": 1,
+      "state": "CORRECTING",
+      "strategy": "Reducir pH y temperatura",
+      "approvalStatus": "APPROVED",
+      "currentCycle": 1,
+      "maximumCycles": 3,
+      "releaseMode": "AUTOMATIC",
+      "releaseEligibility": "NOT_ELIGIBLE",
+      "phMin": 6.5,
+      "phMax": 8.5,
+      "temperatureMin": 18,
+      "temperatureMax": 30,
+      "waitingMinutes": 15,
+      "initialMeasurement": {
+        "ph": 9.1,
+        "temperature": 31.8,
+        "measuredAt": "2026-10-03T11:40:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 9.1,
+        "temperature": 31.8,
+        "measuredAt": "2026-10-03T11:40:00.000Z",
+        "conforming": false
+      },
+      "cycles": [
+        {
+          "number": 1,
+          "action": "Activar representación de corrección",
+          "status": "EXECUTING",
+          "startedAt": "2026-10-03T11:42:00.000Z",
+          "confirmedAt": null,
+          "result": "Esperando confirmación técnica del simulador."
+        }
+      ],
+      "events": [
+        {
+          "id": "tev-tx-correcting-1",
+          "title": "Parámetros fuera de rango",
+          "description": "pH y temperatura requieren corrección.",
+          "outcome": "WARNING",
+          "occurredAt": "2026-10-03T11:40:00.000Z"
+        },
+        {
+          "id": "tev-tx-correcting-2",
+          "title": "Corrección iniciada",
+          "description": "La estrategia aprobada fue enviada al simulador.",
+          "outcome": "INFO",
+          "occurredAt": "2026-10-03T11:42:00.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": null,
+      "startedAt": "2026-10-03T11:40:00.000Z",
+      "updatedAt": "2026-10-03T11:42:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "trt-tx-released",
+      "organizationId": "org-textile",
+      "deviceId": "dev-101",
+      "deviceSerialNumber": "ESP32-HG-TX-001",
+      "reservoirName": "Poza de Acondicionamiento #1",
+      "operatorName": "Marcelino Valencia",
+      "configurationVersion": 1,
+      "state": "COMPLETED",
+      "strategy": null,
+      "approvalStatus": "NOT_REQUIRED",
+      "currentCycle": 0,
+      "maximumCycles": 3,
+      "releaseMode": "AUTOMATIC",
+      "releaseEligibility": "AUTHORIZED",
+      "phMin": 6.5,
+      "phMax": 8.5,
+      "temperatureMin": 18,
+      "temperatureMax": 30,
+      "waitingMinutes": 15,
+      "initialMeasurement": {
+        "ph": 7.35,
+        "temperature": 23.8,
+        "measuredAt": "2026-10-04T18:28:45.000Z",
+        "conforming": true
+      },
+      "latestMeasurement": {
+        "ph": 7.35,
+        "temperature": 23.8,
+        "measuredAt": "2026-10-04T18:28:45.000Z",
+        "conforming": true
+      },
+      "cycles": [],
+      "events": [
+        {
+          "id": "tev-tx-released-1",
+          "title": "Agua conforme",
+          "description": "La medición inicial cumplió la configuración vigente.",
+          "outcome": "SUCCESS",
+          "occurredAt": "2026-10-04T18:28:45.000Z"
+        },
+        {
+          "id": "tev-tx-released-2",
+          "title": "Liberación automática autorizada",
+          "description": "El proceso finalizó sin correcciones.",
+          "outcome": "SUCCESS",
+          "occurredAt": "2026-10-04T18:29:00.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": null,
+      "startedAt": "2026-10-04T18:28:45.000Z",
+      "updatedAt": "2026-10-04T18:29:00.000Z",
+      "completedAt": "2026-10-04T18:29:00.000Z"
+    },
+    {
+      "id": "trt-hp-pending-approval",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "deviceSerialNumber": "ESP32-HG-HP-002",
+      "reservoirName": "Tanque Nutritivo Berros NFT-B",
+      "operatorName": "Carlos Mendoza",
+      "configurationVersion": 1,
+      "state": "PENDING_CORRECTION_APPROVAL",
+      "strategy": "Ajuste de temperatura",
+      "approvalStatus": "PENDING",
+      "currentCycle": 0,
+      "maximumCycles": 2,
+      "releaseMode": "MANUAL",
+      "releaseEligibility": "NOT_ELIGIBLE",
+      "phMin": 5.5,
+      "phMax": 6.5,
+      "temperatureMin": 18,
+      "temperatureMax": 25,
+      "waitingMinutes": 10,
+      "initialMeasurement": {
+        "ph": 6.1,
+        "temperature": 27.4,
+        "measuredAt": "2026-10-04T19:00:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 6.1,
+        "temperature": 27.4,
+        "measuredAt": "2026-10-04T19:00:00.000Z",
+        "conforming": false
+      },
+      "cycles": [],
+      "events": [
+        {
+          "id": "tev-hp-pending-1",
+          "title": "Estrategia propuesta",
+          "description": "Treatment seleccionó la estrategia y espera una única aprobación del Operario.",
+          "outcome": "WARNING",
+          "occurredAt": "2026-10-04T19:00:05.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": null,
+      "startedAt": "2026-10-04T19:00:00.000Z",
+      "updatedAt": "2026-10-04T19:00:05.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "trt-hp-waiting",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-201",
+      "deviceSerialNumber": "ESP32-HG-HP-001",
+      "reservoirName": "Tanque Nutritivo Lechuga NFT-A",
+      "operatorName": "Lucía Paredes",
+      "configurationVersion": 1,
+      "state": "WAITING",
+      "strategy": "Ajuste de pH nutritivo",
+      "approvalStatus": "APPROVED",
+      "currentCycle": 1,
+      "maximumCycles": 2,
+      "releaseMode": "MANUAL",
+      "releaseEligibility": "NOT_ELIGIBLE",
+      "phMin": 5.5,
+      "phMax": 6.5,
+      "temperatureMin": 18,
+      "temperatureMax": 25,
+      "waitingMinutes": 10,
+      "initialMeasurement": {
+        "ph": 5.2,
+        "temperature": 23.4,
+        "measuredAt": "2026-10-03T11:25:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 5.2,
+        "temperature": 23.4,
+        "measuredAt": "2026-10-03T11:25:00.000Z",
+        "conforming": false
+      },
+      "cycles": [
+        {
+          "number": 1,
+          "action": "Incrementar pH de solución nutritiva",
+          "status": "CONFIRMED",
+          "startedAt": "2026-10-03T11:27:00.000Z",
+          "confirmedAt": "2026-10-03T11:28:00.000Z",
+          "result": "Esperando nueva medición."
+        }
+      ],
+      "events": [
+        {
+          "id": "tev-hp-waiting-1",
+          "title": "Actuación confirmada",
+          "description": "Comenzó el tiempo de espera previo a reevaluar.",
+          "outcome": "INFO",
+          "occurredAt": "2026-10-03T11:28:00.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": null,
+      "startedAt": "2026-10-03T11:25:00.000Z",
+      "updatedAt": "2026-10-03T11:28:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "trt-hp-failure",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "deviceSerialNumber": "ESP32-HG-HP-002",
+      "reservoirName": "Tanque Nutritivo Berros NFT-B",
+      "operatorName": "Carlos Mendoza",
+      "configurationVersion": 1,
+      "state": "FAILED",
+      "strategy": "Ajuste de pH nutritivo",
+      "approvalStatus": "APPROVED",
+      "currentCycle": 2,
+      "maximumCycles": 2,
+      "releaseMode": "MANUAL",
+      "releaseEligibility": "NOT_ELIGIBLE",
+      "phMin": 5.5,
+      "phMax": 6.5,
+      "temperatureMin": 18,
+      "temperatureMax": 25,
+      "waitingMinutes": 10,
+      "initialMeasurement": {
+        "ph": 5.2,
+        "temperature": 27.9,
+        "measuredAt": "2026-10-01T09:20:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 5.3,
+        "temperature": 27.2,
+        "measuredAt": "2026-10-01T10:04:30.000Z",
+        "conforming": false
+      },
+      "cycles": [
+        {
+          "number": 1,
+          "action": "Ajustar pH",
+          "status": "CONFIRMED",
+          "startedAt": "2026-10-01T09:30:00.000Z",
+          "confirmedAt": "2026-10-01T09:31:00.000Z",
+          "result": "Continuó fuera de rango."
+        },
+        {
+          "number": 2,
+          "action": "Repetir ajuste de pH",
+          "status": "FAILED",
+          "startedAt": "2026-10-01T09:50:00.000Z",
+          "confirmedAt": null,
+          "result": "Se perdió el monitoreo antes de confirmar."
+        }
+      ],
+      "events": [
+        {
+          "id": "tev-hp-failure-1",
+          "title": "Límite operativo alcanzado",
+          "description": "El proceso no puede ordenar otro ciclo.",
+          "outcome": "FAILURE",
+          "occurredAt": "2026-10-01T10:05:00.000Z"
+        }
+      ],
+      "failureReason": "Pérdida de monitoreo durante el último ciclo.",
+      "emergencyReason": null,
+      "startedAt": "2026-10-01T09:20:00.000Z",
+      "updatedAt": "2026-10-01T10:05:00.000Z",
+      "completedAt": null
+    },
+    {
+      "id": "trt-hp-emergency",
+      "organizationId": "org-hydroponic",
+      "deviceId": "dev-202",
+      "deviceSerialNumber": "ESP32-HG-HP-002",
+      "reservoirName": "Tanque Nutritivo Berros NFT-B",
+      "operatorName": "Carlos Mendoza",
+      "configurationVersion": 1,
+      "state": "EMERGENCY",
+      "strategy": "Ajuste de temperatura",
+      "approvalStatus": "APPROVED",
+      "currentCycle": 1,
+      "maximumCycles": 2,
+      "releaseMode": "MANUAL",
+      "releaseEligibility": "NOT_ELIGIBLE",
+      "phMin": 5.5,
+      "phMax": 6.5,
+      "temperatureMin": 18,
+      "temperatureMax": 25,
+      "waitingMinutes": 10,
+      "initialMeasurement": {
+        "ph": 6.0,
+        "temperature": 28.5,
+        "measuredAt": "2026-09-30T16:00:00.000Z",
+        "conforming": false
+      },
+      "latestMeasurement": {
+        "ph": 6.0,
+        "temperature": 28.5,
+        "measuredAt": "2026-09-30T16:00:00.000Z",
+        "conforming": false
+      },
+      "cycles": [
+        {
+          "number": 1,
+          "action": "Reducir temperatura",
+          "status": "FAILED",
+          "startedAt": "2026-09-30T16:03:00.000Z",
+          "confirmedAt": null,
+          "result": "Interrumpida por parada de emergencia."
+        }
+      ],
+      "events": [
+        {
+          "id": "tev-hp-emergency-1",
+          "title": "Parada de emergencia",
+          "description": "El Operario detuvo el proceso y la válvula quedó cerrada.",
+          "outcome": "FAILURE",
+          "occurredAt": "2026-09-30T16:04:00.000Z"
+        }
+      ],
+      "failureReason": null,
+      "emergencyReason": "Parada solicitada manualmente por el Operario.",
+      "startedAt": "2026-09-30T16:00:00.000Z",
+      "updatedAt": "2026-09-30T16:04:00.000Z",
+      "completedAt": null
+    }
+  ],
+  "reports": []
+}
