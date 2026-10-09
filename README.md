@@ -49,7 +49,7 @@ El despliegue de demostración separa los dos procesos:
 - `vercel.json` compila Angular, publica `dist/hydroguard-admin-web-frontend/browser`, reenvía `/api/*` al mock y configura el fallback de Angular Router.
 - `render.yaml` ejecuta el mock como un Web Service Node.js en Render.
 
-Despliegue primero el Blueprint de Render y compruebe `/api/v1/health`. Después importe el repositorio en Vercel. La configuración espera el dominio `https://hydroguard-academic-mock-api.onrender.com`; si Render asigna otro, actualice la primera regla de `vercel.json` antes de desplegar Vercel.
+Despliegue primero el Blueprint de Render y compruebe `/api/v1/health`. El servicio configurado se llama `hydroguard-mock-api-8740` y su dominio esperado es `https://hydroguard-mock-api-8740.onrender.com`.
 
 El plan gratuito de Render utiliza almacenamiento efímero: un reinicio o nuevo despliegue devuelve el mock a la semilla de `db.json`. Esta configuración es adecuada para la demostración académica, no para almacenar datos reales.
 
