@@ -449,10 +449,24 @@ try {
     (await request('GET', '/groups/' + emptyGroup.id, textile)).group.status,
     'INACTIVE',
   );
-  const accountBSession = await request('POST', '/authentication/sign-in', null, {
-    identifier: profileB.userId === accountB.id ? accountB.identifier : accountC.identifier,
-    password: 'testpassword123',
-  });
+  const profileBAccount = profileB.userId === accountB.id ? accountB : accountC;
+  const profileBCode = await request(
+    'POST',
+    '/operators/' + profileBAccount.id + '/first-access-code',
+    textile,
+    { operatorProfileId: profileB.id },
+    201,
+  );
+  const accountBSession = await request(
+    'POST',
+    '/authentication/operator-first-access',
+    null,
+    {
+      identifier: profileBAccount.identifier,
+      password: 'testpassword123',
+      code: profileBCode.code,
+    },
+  );
   await request(
     'PATCH',
     '/operators/' + profileB.userId + '/status',

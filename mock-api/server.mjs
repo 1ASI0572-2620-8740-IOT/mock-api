@@ -6,6 +6,7 @@ import { handleConfiguration, isConfigurationPath } from './configuration/routes
 import { handleMonitoring, isMonitoringPath } from './monitoring/routes.mjs';
 import { handleTelemetry, isTelemetryPath } from './telemetry/routes.mjs';
 import { handleTreatment, isTreatmentPath } from './treatment/routes.mjs';
+import { handleOperator, isOperatorPath } from './operator/routes.mjs';
 import { closeAssignment, hasProcess } from './configuration/helpers.mjs';
 
 const PORT = Number(process.env.PORT || 3000);
@@ -17,7 +18,7 @@ const send = (res, status, body) => {
   res.writeHead(status, {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Correlation-Id',
-    'Access-Control-Allow-Methods': 'GET, POST, PATCH, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, OPTIONS',
     ...(body === undefined ? {} : { 'Content-Type': 'application/json; charset=utf-8' }),
   });
   res.end(body === undefined ? undefined : JSON.stringify(body));
@@ -138,11 +139,11 @@ const handleRequest = async (req, res) => {
       const protocol = forwardedProtocol || (req.socket.encrypted ? 'https' : 'http');
       const requestHost = req.headers.host || `127.0.0.1:${server.address().port}`;
       return send(res, 200, {
-        name: 'HydroGuard Admin Mock API',
+        name: 'HydroGuard Mock API',
         status: 'UP',
         baseUrl: `${protocol}://${requestHost}/api/v1`,
         frontendUrl: 'http://127.0.0.1:4200',
-        message: 'El mock está activo. La interfaz web se ejecuta en el puerto 4200.',
+        message: 'El mock está activo para las aplicaciones web y móvil.',
       });
     }
 
@@ -245,6 +246,14 @@ const handleRequest = async (req, res) => {
       if (user.status !== 'ACTIVE') {
         return send(res, 403, { message: 'La cuenta se encuentra inactiva.' });
       }
+      if (isOperator(user)) {
+        const profile = db.operatorProfiles.find((item) => item.userId === user.id);
+        if (!profile || profile.status !== 'ACTIVE') {
+          return send(res, 403, {
+            message: 'Debe completar el primer acceso con el código entregado por el administrador.',
+          });
+        }
+      }
 
       const token = 'mock-' + randomUUID();
       const expiresAt = Date.now() + 8 * 60 * 60 * 1000;
@@ -266,6 +275,54 @@ const handleRequest = async (req, res) => {
       });
     }
 
+    if (req.method === 'POST' && path === '/api/v1/authentication/operator-first-access') {
+      const body = await readBody(req);
+      const identifier = String(body.identifier || '').trim().toLowerCase();
+      const codeValue = String(body.code || '').trim().toUpperCase();
+      const user = db.users.find(
+        (item) => item.identifier.toLowerCase() === identifier && isOperator(item),
+      );
+      const code = db.firstAccessCodes.find(
+        (item) => item.code.toUpperCase() === codeValue && item.operatorAccountId === user?.id,
+      );
+      const profile = db.operatorProfiles.find((item) => item.userId === user?.id);
+      const hasAssignment = db.deviceAssignments.some(
+        (item) => item.operatorProfileId === profile?.id && item.status === 'ACTIVE',
+      );
+      if (!user || !code || code.status !== 'ACTIVE') {
+        return send(res, 422, { message: 'Identificador o código de primer acceso inválido.' });
+      }
+      if (!profile || !hasAssignment) {
+        return send(res, 409, { message: 'El perfil debe tener grupo, reservorio y dispositivo asignados.' });
+      }
+      if (String(body.password || '') !== user.password) {
+        return send(res, 401, { message: 'La contraseña configurada por el administrador no coincide.' });
+      }
+      const now = new Date().toISOString();
+      code.status = 'USED';
+      code.usedAt = now;
+      profile.status = 'ACTIVE';
+      user.status = 'ACTIVE';
+      user.updatedAt = now;
+      const token = 'mock-' + randomUUID();
+      const expiresAt = Date.now() + 8 * 60 * 60 * 1000;
+      sessions.set(token, {
+        userId: user.id,
+        organizationId: user.organizationId,
+        role: 'OPERATOR',
+        expiresAt,
+      });
+      await saveDb(db);
+      return send(res, 200, {
+        id: user.id,
+        identifier: user.identifier,
+        organizationId: user.organizationId,
+        token,
+        role: 'OPERATOR',
+        expiresAt: new Date(expiresAt).toISOString(),
+      });
+    }
+
     const authentication = requireAuthentication(req);
     if (!db.users.some((user) => user.id === authentication.userId && user.status === 'ACTIVE')) {
       sessions.delete(authentication.token);
@@ -275,6 +332,13 @@ const handleRequest = async (req, res) => {
     if (req.method === 'POST' && path === '/api/v1/authentication/sign-out') {
       sessions.delete(authentication.token);
       return send(res, 204);
+    }
+
+    if (isOperatorPath(path)) {
+      const body = ['POST', 'PUT', 'PATCH'].includes(req.method) ? await readBody(req) : {};
+      const result = handleOperator({ method: req.method, url, body, db, authentication });
+      if (result.changed) await saveDb(db);
+      return send(res, result.status, result.body);
     }
 
     const { organizationId } = requireAdministrator(authentication);
@@ -526,7 +590,7 @@ const server = createServer((req, res) => {
 
 server.listen(PORT, HOST, () => {
   console.log(
-    'HydroGuard Admin mock disponible en http://' +
+    'HydroGuard mock disponible en http://' +
       (HOST === '0.0.0.0' ? '127.0.0.1' : HOST) +
       ':' +
       server.address().port +

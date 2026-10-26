@@ -1,6 +1,6 @@
-# HydroGuard Admin Web
+# HydroGuard Mock API
 
-Aplicación web multiempresa para la administración de identidades y accesos de HydroGuard. En el alcance actual permite registrar una empresa con su única cuenta administradora, autenticar al administrador, crear y desactivar cuentas de operarios, consultar sus vínculos operativos y gestionar códigos de primer acceso.
+Backend simulado multiempresa para probar localmente la aplicación web del Administrador y la aplicación Flutter del Operario. Persiste temporalmente en `mock-api/db.json` o en la copia indicada mediante `MOCK_DB_PATH`.
 
 El bounded context de configuración operativa (BC-02) permite administrar grupos, reservorios, dispositivos, vinculaciones exclusivas y perfiles de Operario con asignaciones e historial. La creación de una cuenta continúa hacia su perfil y código de primer acceso. La web también consulta borradores, versiones publicadas y compatibilidad de configuraciones, sin editarlas.
 
@@ -40,6 +40,14 @@ npm start
 
 Abre `http://127.0.0.1:4200/`. Desde el acceso se puede registrar una empresa junto con su único administrador. Otras empresas también pueden registrarse y mantienen sus usuarios y recursos separados mediante `organizationId`.
 
+Para Flutter, inicie el servidor con `HOST=0.0.0.0` y ejecute:
+
+```powershell
+flutter run --dart-define=HYDROGUARD_API_URL=http://10.0.2.2:3000/api/v1
+```
+
+El emulador Android usa `10.0.2.2` para acceder a la laptop. Un teléfono físico debe usar la IPv4 local de la laptop.
+
 El frontend consume rutas `/api/v1`. Durante el desarrollo, [proxy.conf.json](proxy.conf.json) dirige `/api` hacia el mock local; en producción se conserva la misma ruta relativa para integrarse con el backend real.
 
 ## Despliegue académico
@@ -64,6 +72,15 @@ El mock persiste los registros en `mock-api/db.json`; las contraseñas visibles 
 | Textil San Juan S.A.C.       | Textil      | `admin.textil@hydroguard.pe` | `adminpassword123` |
 | Hidroverde Pachacámac S.A.C. | Hidropónico | `admin.hidro@hydroguard.pe`  | `adminpassword123` |
 
+Operarios:
+
+| Caso | Identificador | Contraseña | Código |
+|:--|:--|:--|:--|
+| Login activo | `marcelino.valencia` | `operadorpassword123` | — |
+| Primer acceso | `carlos.mendoza` | `operadorpassword123` | `HG-31Z8P9` |
+
+Las rutas `/api/v1/operator/*` derivan perfil y asignaciones desde el token, impiden consultar dispositivos ajenos y cubren contexto, configuración, telemetría, Treatment, alertas e historial.
+
 Cada cuenta administradora solo puede consultar y modificar los operarios y recursos operativos pertenecientes a su empresa.
 
 ## Comandos
@@ -75,6 +92,7 @@ npm run build      # Compilación de producción
 npm run verify:bc02 # Verificación HTTP sobre una base temporal
 npm run verify:bc04 # Verificación de Treatment
 npm run verify:bc05 # Verificación de Monitoring
+npm run verify:operator # Verificación integral de contratos móviles
 ```
 
 ## Estructura principal

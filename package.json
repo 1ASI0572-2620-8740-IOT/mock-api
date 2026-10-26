@@ -8,6 +8,7 @@
     "verify:bc02": "node scripts/verify-bc02.mjs",
     "verify:bc04": "node scripts/verify-bc04.mjs",
     "verify:bc05": "node scripts/verify-bc05.mjs",
+    "verify:operator": "node scripts/verify-operator.mjs",
     "build": "ng build",
     "watch": "ng build --watch --configuration development"
   },
